@@ -1,0 +1,13 @@
+ShortName=
+LongName=
+Description=
+Publisher=
+AppVersion=
+MinimumOSVersion=10.0.0.0
+Category=
+LogoUrl=
+InstallParameters=
+Detection=
+UninstallerLocation=
+UninstallParameters=
+InstallerUrl=
