@@ -6,7 +6,7 @@ $QFileDest = ($QFolderDest + $QFileName)
 
 #Create folder
 if (test-path -path $QFolderDest -PathType Container) {
-    
+   
 }
 else {
     New-Item -ItemType Directory -Path $QFolderDest -Force
@@ -16,7 +16,12 @@ else {
 (New-Object Net.WebClient).DownloadFile($Qsource, $QFileDest)
 
 #Get variables from QRecipe
-$values = Get-Content $QFileDest | Out-String | ConvertFrom-StringData
+$valuesString = Get-Content $QFileDest | Out-String
+# https://stackoverflow.com/questions/24142436/powershell-parsing-a-properties-file-that-contains-colons#:~:text=Here%27s%20how%20to%20fix%20your%20code%3A
+$StringToConvert = $valuesString -replace '\\', '\\'
+$values = ConvertFrom-StringData $StringToConvert
+
+
 
 $ShortName = $values.ShortName
 $LongName = $values.LongName
