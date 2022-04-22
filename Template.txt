@@ -11,3 +11,4 @@ Detection=
 UninstallerLocation=
 UninstallParameters=
 InstallerUrl=
+InstallerHash= 
